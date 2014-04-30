@@ -2,7 +2,7 @@ require 'benchmark'
 
 # We make the list an instance variable so that we can measure the exact function time later, without assigning its result to another var.
 
-@list = (1..9999).to_a.sample(20)
+@list = (1..9999).to_a.sample(100)
 puts "Original list: #{@list}"
 
 def bubble_sort
@@ -19,6 +19,7 @@ time = Benchmark.realtime do
   bubble_sort
 end
 
+puts "---"
 puts "Ordered list: #{@list}"
 puts "---"
 puts "Time elapsed was #{time*1000} milliseconds"
